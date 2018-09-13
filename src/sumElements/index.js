@@ -12,6 +12,19 @@
  */
 const sumElements = arr => {
   /* your logic here...*/
+  let rez = 0;
+  for(let i = 0; i< arr.length; i++) {
+    if (isNaN(parseInt(arr[i]))) {
+      continue;
+    } else {
+      rez += parseInt(arr[i]);
+    }    
+  }
+  return rez;
 };
+
+sumElements([1, 2, 3]);
+sumElements(['1', 'hi', 3]);
+sumElements([Infinity, NaN, 1]);
 
 export default sumElements;
