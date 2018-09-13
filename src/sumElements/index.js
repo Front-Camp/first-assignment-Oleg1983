@@ -14,17 +14,20 @@ const sumElements = arr => {
   /* your logic here...*/
   let rez = 0;
   for(let i = 0; i< arr.length; i++) {
-    if (isNaN(parseInt(arr[i]))) {
+    if (isNaN(parseFloat(arr[i]))) {
       continue;
-    } else {
-      rez += parseInt(arr[i]);
+    } else if(parseFloat(arr[i]) === Infinity) {
+      continue;
+    }
+    else {
+      if (isNaN(Number(arr[i]))) {
+        rez += parseFloat(arr[i]);
+      } else {
+        rez += parseFloat(Number(arr[i]));
+      }      
     }    
   }
   return rez;
 };
-
-sumElements([1, 2, 3]);
-sumElements(['1', 'hi', 3]);
-sumElements([Infinity, NaN, 1]);
 
 export default sumElements;
