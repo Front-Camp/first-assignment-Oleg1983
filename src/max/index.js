@@ -10,14 +10,15 @@ const max = arr => {
   /* your logic here...*/
   let maxValue = -Infinity;
   for(let i = 0; i < arr.length; i++) {
-    if(arr[i]> maxValue) {
-      maxValue = arr[i];
+    if (arr[i] === Infinity || arr[i] === -Infinity) {
+      continue;
+    } else {
+      if(arr[i]> maxValue) {
+        maxValue = arr[i];
+      }
     }
   }
   return maxValue;
 };
-
-max([1, 2, 4]);
-max([-1, 0]);
 
 export default max;
