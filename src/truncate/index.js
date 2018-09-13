@@ -11,12 +11,15 @@ const truncate = (str, length = 0, replacer = '...') => {
   /* your logic here...*/
   let newStr;
   let newLength;
-  if (length === 0) {
+  if (length === 0 && str.length > 0) {
     newLength = str.length - replacer.length;
     newStr = str.substr(0,newLength) + replacer;
   } else if(length > str.length) {
     newStr = 'Some very long text';
-  } else {
+  } else if (str.length === 0) {
+    newStr = '';
+  } 
+  else {
     newLength = length - replacer.length;
     newStr = str.substr(0,newLength) + replacer;
   }  
