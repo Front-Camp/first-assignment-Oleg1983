@@ -12,9 +12,13 @@ const twoSums = (arr, base) => {
   /* your logic here...*/
   let newArr = [];
   for (let i = 0; i< arr.length; i++) {
-    if (arr[i] + arr[i+1] === base) {
-      newArr.push(arr[i]);
-      newArr.push(arr[i+1]);
+    if (newArr.length > 0) { break; }
+    for(let j = 1; j<arr.length; j++) {
+      if(arr[i]+arr[j] === base) {
+        newArr.push(arr[i]);
+        newArr.push(arr[j]);
+        break;
+      }
     }
   }
   return newArr;
