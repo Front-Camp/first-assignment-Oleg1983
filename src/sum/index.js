@@ -11,17 +11,14 @@
 */
 const sum = (a, b) => {
   /* your logic here...*/
-  if(typeof(a) === 'number' && typeof(b) ==='number') {
+  if (!isFinite(a) || !isFinite(b)) {
+    throw new Error();
+  } else if (typeof(a) === 'number' && b === undefined) {
+    throw new Error();
+  } if(typeof(a) === 'number' && typeof(b) ==='number') {
     return a + b;
-  } else if (isNaN(a) || isNaN(b)) {
-    return error;
-  } else if (a === Infinity || a === -Infinity || b === Infinity || b === -Infinity) {
-    return new Error();
-  } else if (a === null || b === null) {
-    return error;
-  }
-  else {
-    return error;    
+  } else if (typeof(a) === 'number' || typeof(b) ==='number') {
+    throw new Error();
   }
 };
 

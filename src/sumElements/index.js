@@ -24,8 +24,8 @@ const sumElements = arr => {
         rez += parseFloat(arr[i]);
       } else {
         rez += parseFloat(Number(arr[i]));
-      }      
-    }    
+      }
+    }
   }
   return rez;
 };
